@@ -1270,48 +1270,6 @@ END
 	menu
 }
 
-BURIQ
-x="ok"
-#PERMISSION
-res="Permission Accepted..."
-
-if [ "$res" = "Expired" ]; then
-	Exp="\e[36mExpired\033[0m"
-	rm -f /home/needupdate > /dev/null 2>&1
-else
-	Exp=$(curl -sS https://raw.githubusercontent.com/zahwanugrah/kuprit/main/ip.txt | grep $MYIP | awk '{print $3}')
-fi
-
-export RED='\033[0;31m'
-export GREEN='\033[0;32m'
-
-crod=$( systemctl status cron | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $crod == "running" ]]; then
-	BCD1="${GREEN}ON${NC}"
-else
-	BCD1="${RED}OFF${NC}"
-fi
-
-ngtd=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $ngtd == "running" ]]; then
-	BCD2="${GREEN}ON${NC}"
-else
-	BCD2="${RED}OFF${NC}"
-fi
-
-xr=$( systemctl status xray@tls | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
-if [[ $xr == "running" ]]; then
-	BCD3="${GREEN}ON${NC}"
-else
-	BCD3="${RED}OFF${NC}"
-fi
-	
-if [ "$Isadmin" = "ON" ]; then
-	cit="${GREEN}PREMIUM${NC}"
-else
-	#cit="${RED}FREE{$NC}"
-	cit="${GREEN}PREMIUM${NC}"
-fi
 
 echo -e ""
 echo -e "  ${YELLOW}---------==[${NC} ${RED}PREMIUM PANEL MENU${NC} ${YELLOW}]==--------- ${NC}"
