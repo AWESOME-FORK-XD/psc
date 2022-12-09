@@ -13,9 +13,9 @@ read -p "Hostname / Domain: " host
 echo "$host" >> /etc/adi/domain
 echo "$host" >> /root/domain
 # LINK ENVIROMENT
-source="https://raw.githubusercontent.com/majrot/kuprit/main/data"
+source="https://raw.githubusercontent.com/sibeesans/psc/main/data"
 #scgeo="https://raw.githubusercontent.com/malikshi/v2ray-rules-dat/release"
-scgeo="https://raw.githubusercontent.com/majrot/kuprit/main/data"
+scgeo="https://raw.githubusercontent.com/sibeesans/psc/main/data"
 domain=$(cat /root/domain)
 # Timpa Text
 echo -e "
